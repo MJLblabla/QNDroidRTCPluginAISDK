@@ -14,7 +14,6 @@ public class TokenUtils {
     static String appId = "";
     static String appSecretKey = "";
 
-
     public static String resetToken() {
 
         long exp = System.currentTimeMillis() / 1000 + 67 * 60 * 60 * 12;

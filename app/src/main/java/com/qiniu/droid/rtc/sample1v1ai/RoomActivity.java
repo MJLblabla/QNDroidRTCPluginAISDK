@@ -123,7 +123,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
         flCover.localAudioTrack = mLocalAudioTrack;
         flCover.localVideoTrack = mLocalVideoTrack;
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.flCover,flCover);
+        transaction.replace(R.id.flCover, flCover);
         transaction.commit();
     }
 
@@ -137,6 +137,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
     /**
      * 房间状态改变时会回调此方法
      * 房间状态回调只需要做提示用户，或者更新相关 UI； 不需要再做加入房间或者重新发布等其他操作！
+     *
      * @param state 房间状态，可参考 {@link QNConnectionState}
      */
     @Override
@@ -175,10 +176,10 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
 
     /**
      * 远端用户加入房间时会回调此方法
-     * @see QNRTCClient#join(String, String, QNJoinResultCallback) 可指定 userData 字段
      *
      * @param remoteUserId 远端用户的 userId
-     * @param userData 透传字段，用户自定义内容
+     * @param userData     透传字段，用户自定义内容
+     * @see QNRTCClient#join(String, String, QNJoinResultCallback) 可指定 userData 字段
      */
     @Override
     public void onUserJoined(String remoteUserId, String userData) {
@@ -219,7 +220,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
      * 远端用户 tracks 成功发布时会回调此方法
      *
      * @param remoteUserId 远端用户 userId
-     * @param trackList 远端用户发布的 tracks 列表
+     * @param trackList    远端用户发布的 tracks 列表
      */
     @Override
     public void onUserPublished(String remoteUserId, List<QNTrack> trackList) {
@@ -230,7 +231,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
      * 远端用户 tracks 成功取消发布时会回调此方法
      *
      * @param remoteUserId 远端用户 userId
-     * @param trackList 远端用户取消发布的 tracks 列表
+     * @param trackList    远端用户取消发布的 tracks 列表
      */
     @Override
     public void onUserUnpublished(String remoteUserId, List<QNTrack> trackList) {
@@ -247,7 +248,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
      * 成功订阅远端用户的 tracks 时会回调此方法
      *
      * @param remoteUserId 远端用户 userId
-     * @param trackList 订阅的远端用户 tracks 列表
+     * @param trackList    订阅的远端用户 tracks 列表
      */
     @Override
     public void onSubscribed(String remoteUserId, List<QNTrack> trackList) {
@@ -276,7 +277,7 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
     /**
      * 系统相机出错时会触发此回调
      *
-     * @param errorCode 错误码
+     * @param errorCode    错误码
      * @param errorMessage 错误原因
      */
     @Override
@@ -330,7 +331,6 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
 
     public void clickSwitchCamera(View view) {
         final ImageButton button = (ImageButton) view;
-
         // 切换摄像头
         QNRTC.switchCamera(new QNCameraSwitchResultCallback() {
             @Override
@@ -345,7 +345,6 @@ public class RoomActivity extends AppCompatActivity implements QNRTCEventListene
 
             @Override
             public void onCameraSwitchError(String errorMessage) {
-
             }
         });
     }

@@ -36,6 +36,7 @@ class QnTrackAlDemo : Fragment() {
 
     lateinit var localAudioTrack: QNTrack
     lateinit var localVideoTrack: QNTrack
+    var mQNAudioToTextAnalyzer: QNAudioToTextAnalyzer? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,11 +47,8 @@ class QnTrackAlDemo : Fragment() {
         return v
     }
 
-    var mQNAudioToTextAnalyzer: QNAudioToTextAnalyzer? = null
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         audioRcMe.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 mQNAudioToTextAnalyzer = QNAudioToTextAnalyzer.start(
@@ -61,9 +59,7 @@ class QnTrackAlDemo : Fragment() {
                         /**
                          * 开始成功
                          */
-                        override fun onStart() {
-
-                        }
+                        override fun onStart() {}
 
                         /**
                          * 错误
@@ -96,10 +92,6 @@ class QnTrackAlDemo : Fragment() {
             }
         }
 
-        mRtcRecorderBtn.setOnCheckedChangeListener { _, isChecked ->
-
-        }
-
         btFaceLive.setOnClickListener {
             if (llFace.visibility == View.VISIBLE) {
                 llFace.visibility = View.GONE
@@ -107,7 +99,6 @@ class QnTrackAlDemo : Fragment() {
                 llFace.visibility = View.VISIBLE
             }
         }
-
         btNob.setOnClickListener {
             faceLive(btNob, "请点点头", QNFaceActAction.NOD)
         }
@@ -179,7 +170,8 @@ class QnTrackAlDemo : Fragment() {
                             url
                         );
                         bm?.let {
-                            QNFaceComparer.run(localVideoTrack, bm,
+                            QNFaceComparer.run(
+                                localVideoTrack, bm,
                                 QNFaceCompareParam()
                             ) {
                                 tvText.text = Json.encode(it)

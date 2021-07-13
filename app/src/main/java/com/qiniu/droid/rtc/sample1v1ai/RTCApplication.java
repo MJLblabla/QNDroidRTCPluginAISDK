@@ -26,10 +26,8 @@ public class RTCApplication extends Application {
         // 如果存在 SDCard 且具有权限，将保存在 /sdcard/Android/data/包名/files/QNRTCLog 中，
         // 若没有，将保存在 mContext.getFilesDir().getAbsolutePath() + File.separator + "QNRTCLog" 中
         // QNRTCEnv.setLogFileMaxCount(3);
-
         // 初始化 QNRTC 环境
         QNRTCEnv.init(this);
-
         // 初始化使用的第三方二维码扫描库，与 QNRTC 无关，请忽略
         ZXingLibrary.initDisplayOpinion(getApplicationContext());
 
