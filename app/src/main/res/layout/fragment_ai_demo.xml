@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clCover"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:background="#66000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btFaceLive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="动作活体"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/llFace"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/btFaceLive"
+        app:layout_constraintEnd_toStartOf="@+id/btFaceLive"
+        app:layout_constraintTop_toTopOf="@+id/btFaceLive">
+
+        <Button
+            android:id="@+id/btNob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点点头" />
+
+        <Button
+            android:id="@+id/btShake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="摇摇头" />
+
+        <Button
+            android:id="@+id/btBlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="眨眨眼" />
+
+        <Button
+            android:id="@+id/btMouth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张张嘴" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btOCR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="身份证识别"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFaceLive" />
+
+    <Button
+        android:id="@+id/btFaceDetect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="人脸检测"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btOCR" />
+
+    <Button
+        android:id="@+id/btFaceCompare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人脸对比"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFaceDetect" />
+
+    <Button
+        android:id="@+id/swithCamere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="切换摄像头"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btFaceCompare">
+
+        <androidx.appcompat.widget.SwitchCompat
+
+            android:id="@+id/audioRcpeer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:text="智能语音识别对方"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.SwitchCompat
+
+            android:id="@+id/audioRcMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:text="智能实时语音识别自己"
+
+            android:textColor="@color/colorAccent"
+            tools:visibility="visible"
+
+            />
+
+        <Button
+            android:id="@+id/btnAudioSingle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+
+            android:text="长按识别单句"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="TextView"
+        android:textColor="#FF3700B3"
+        android:textSize="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/temoIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/mRtcRecorderBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="录制"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llTTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:orientation="horizontal"
+        android:gravity="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" >
+
+        <EditText
+            android:id="@+id/etTTS"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="文字转语音"
+            />
+
+        <Button
+            android:id="@+id/btnTTS"
+            android:text="文转音"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnFlashLive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="光线活体"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFaceLive" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
